@@ -52,15 +52,15 @@ class MyMainWindow(QtGui.QWidget):
         painter.begin(self)
         painter.setRenderHint(QtGui.QPainter.Antialiasing)
         painter.setPen(QtCore.Qt.NoPen)
-        painter.drawPixmap(100, 100, 100, 100, QtGui.QPixmap("icon/addpeople_fill.png"))
-        painter.drawPixmap(300, 100, 100, 100, QtGui.QPixmap("icon/addressbook.png"))
-        painter.drawPixmap(500, 100, 100, 100, QtGui.QPixmap("icon/search.png"))
-        painter.drawPixmap(700, 100, 100, 100, QtGui.QPixmap("icon/narrow.png"))
+        painter.drawPixmap(100, 100, 100, 100, QtGui.QPixmap("../icon/addpeople_fill.png"))
+        painter.drawPixmap(300, 100, 100, 100, QtGui.QPixmap("../icon/addressbook.png"))
+        painter.drawPixmap(500, 100, 100, 100, QtGui.QPixmap("../icon/search.png"))
+        painter.drawPixmap(700, 100, 100, 100, QtGui.QPixmap("../icon/narrow.png"))
 
-        painter.drawPixmap(100, 300, 100, 100, QtGui.QPixmap("icon/businesscard.png"))
-        painter.drawPixmap(300, 300, 100, 100, QtGui.QPixmap("icon/like_fill.png"))
-        painter.drawPixmap(500, 300, 100, 100, QtGui.QPixmap("icon/like_fill.png"))
-        painter.drawPixmap(700, 300, 100, 100, QtGui.QPixmap("icon/setup.png"))
+        painter.drawPixmap(100, 300, 100, 100, QtGui.QPixmap("../icon/businesscard.png"))
+        painter.drawPixmap(300, 300, 100, 100, QtGui.QPixmap("../icon/like_fill.png"))
+        painter.drawPixmap(500, 300, 100, 100, QtGui.QPixmap("../icon/like_fill.png"))
+        painter.drawPixmap(700, 300, 100, 100, QtGui.QPixmap("../icon/setup.png"))
         painter.end()
 
     def setUp(self):

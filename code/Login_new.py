@@ -6,7 +6,7 @@ import cPickle as p
 from  MainWindow import MyMainWindow
 
 _fromUtf8 = QtCore.QString.fromUtf8
-userlistfile = './config/userlist.dat'
+userlistfile = '../config/userlist.dat'
 #loginstylekey=['销售员',]
 try:
     _encoding = QtGui.QApplication.UnicodeUTF8
