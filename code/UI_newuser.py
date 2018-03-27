@@ -10,7 +10,7 @@
 from PyQt4 import QtCore, QtGui
 import sys
 
-countrylist = ['中国','印度','俄罗斯','印度尼西亚','菲律宾']
+CountryList = ['中国','印度','俄罗斯','印度尼西亚','菲律宾']
 
 try:
     _fromUtf8 = QtCore.QString.fromUtf8
@@ -35,6 +35,7 @@ class Ui_Dialog(QtGui.QWidget):
         font = QtGui.QFont()
         font.setPointSize(14)
         self.setFont(font)
+        #名称
         self.labelCustomerName = QtGui.QLabel(self)
         self.labelCustomerName.setGeometry(QtCore.QRect(42, 22, 90, 19))
         self.labelCustomerName.setSizeIncrement(QtCore.QSize(25, 18))
@@ -50,6 +51,7 @@ class Ui_Dialog(QtGui.QWidget):
         self.lineEditCustomerName.setFont(font)
         self.lineEditCustomerName.setText(_fromUtf8(""))
         self.lineEditCustomerName.setObjectName(_fromUtf8("lineEditCustomerName"))
+        #简称
         self.labelCustomerAbbreviation = QtGui.QLabel(self)
         self.labelCustomerAbbreviation.setGeometry(QtCore.QRect(40, 80, 90, 19))
         self.labelCustomerAbbreviation.setSizeIncrement(QtCore.QSize(25, 18))
@@ -65,6 +67,7 @@ class Ui_Dialog(QtGui.QWidget):
         self.lineEditCustomerAbbreviation.setFont(font)
         self.lineEditCustomerAbbreviation.setText(_fromUtf8(""))
         self.lineEditCustomerAbbreviation.setObjectName(_fromUtf8("lineEditCustomerAbbreviation"))
+        #联系方式
         self.lineEditCustomerTel1 = QtGui.QLineEdit(self)
         self.lineEditCustomerTel1.setGeometry(QtCore.QRect(160, 130, 211, 31))
         self.lineEditCustomerTel1.setSizeIncrement(QtCore.QSize(25, 21))
@@ -178,6 +181,7 @@ class Ui_Dialog(QtGui.QWidget):
         self.dateEditCustomerBirthday.setDateTime(QtCore.QDateTime(QtCore.QDate(1950, 1, 1), QtCore.QTime(0, 0, 0)))
         self.dateEditCustomerBirthday.setCalendarPopup(True)
         self.dateEditCustomerBirthday.setObjectName(_fromUtf8("dateEditCustomerBirthday"))
+        #国家
         self.labelCountry = QtGui.QLabel(self)
         self.labelCountry.setGeometry(QtCore.QRect(70, 500, 50, 21))
         self.labelCountry.setSizeIncrement(QtCore.QSize(25, 18))
@@ -185,7 +189,6 @@ class Ui_Dialog(QtGui.QWidget):
         font.setPointSize(14)
         self.labelCountry.setFont(font)
         self.labelCountry.setObjectName(_fromUtf8("labelCountry"))
-        #国家
         self.comboBoxCustomerGrade_2 = QtGui.QComboBox(self)
         self.comboBoxCustomerGrade_2.setGeometry(QtCore.QRect(160, 490, 181, 31))
         self.comboBoxCustomerGrade_2.setSizeIncrement(QtCore.QSize(25, 21))
@@ -194,8 +197,8 @@ class Ui_Dialog(QtGui.QWidget):
         font.setPointSize(13)
         self.comboBoxCustomerGrade_2.setFont(font)
         self.comboBoxCustomerGrade_2.setObjectName(_fromUtf8("comboBoxCustomerGrade_2"))
-        self.comboBoxCustomerGrade_2.addItem(_fromUtf8( "---请选择---"))
-        for countrylistvar in countrylist:
+        #self.comboBoxCustomerGrade_2.addItem(_fromUtf8( "---请选择---"))
+        for countrylistvar in CountryList:
             self.comboBoxCustomerGrade_2.addItem(_fromUtf8(countrylistvar))
 
         #区域
@@ -313,6 +316,8 @@ class Ui_Dialog(QtGui.QWidget):
         self.retranslateUi()
         QtCore.QMetaObject.connectSlotsByName(self)
 
+        self.connect(self.pushButtonConfirm, QtCore.SIGNAL('clicked()'), self.ConfirmFunc)
+
     def retranslateUi(self):
         self.setWindowTitle(_translate("Dialog", "Dialog", None))
         self.labelCustomerName.setText(_translate("Dialog", "客户名称", None))
@@ -344,9 +349,6 @@ class Ui_Dialog(QtGui.QWidget):
         self.dateEditCustomerBirthday.setDisplayFormat(_translate("Dialog", "yyyy年M月d日", None))
         self.labelCountry.setText(_translate("Dialog", "国家", None))
 
-
-
-
         self.labelCustomerAddress.setText(_translate("Dialog", "客户地址", None))
         self.comboBoxProvince.setItemText(0, _translate("Dialog", "请选择省份", None))
         self.comboBoxProvince.setItemText(1, _translate("Dialog", "小型", None))
@@ -365,6 +367,15 @@ class Ui_Dialog(QtGui.QWidget):
         self.labelCreater.setText(_translate("Dialog", "创建人", None))
         self.pushButtonConfirm.setText(_translate("Dialog", "确认", None))
         self.pushButtonCancel.setText(_translate("Dialog", "取消", None))
+
+    def ConfirmFunc(self):
+        print 'confirm clicked!'
+        print "customer name:", str(self.lineEditCustomerName.text())
+        print "customer ", str(self.lineEditCustomerAbbreviation.text())
+        print "customer tel1", str(self.lineEditCustomerTel1.text())
+        print "customer tel2", str(self.lineEditCustomerTel2.text())
+
+
 
 if __name__=='__main__':
     app = QtGui.QApplication(sys.argv)
