@@ -185,6 +185,7 @@ class Ui_Dialog(QtGui.QWidget):
         font.setPointSize(14)
         self.labelCountry.setFont(font)
         self.labelCountry.setObjectName(_fromUtf8("labelCountry"))
+        #国家
         self.comboBoxCustomerGrade_2 = QtGui.QComboBox(self)
         self.comboBoxCustomerGrade_2.setGeometry(QtCore.QRect(160, 490, 181, 31))
         self.comboBoxCustomerGrade_2.setSizeIncrement(QtCore.QSize(25, 21))
@@ -194,12 +195,10 @@ class Ui_Dialog(QtGui.QWidget):
         self.comboBoxCustomerGrade_2.setFont(font)
         self.comboBoxCustomerGrade_2.setObjectName(_fromUtf8("comboBoxCustomerGrade_2"))
         self.comboBoxCustomerGrade_2.addItem(_fromUtf8( "---请选择---"))
-        #self.comboBoxCustomerGrade_2.addItem(_fromUtf8(""))
-        #self.comboBoxCustomerGrade_2.addItem(_fromUtf8(""))
-        #self.comboBoxCustomerGrade_2.addItem(_fromUtf8(""))
-        #self.comboBoxCustomerGrade_2.addItem(_fromUtf8(""))
         for countrylistvar in countrylist:
             self.comboBoxCustomerGrade_2.addItem(_fromUtf8(countrylistvar))
+
+        #区域
         self.labelArea = QtGui.QLabel(self)
         self.labelArea.setGeometry(QtCore.QRect(370, 500, 50, 21))
         self.labelArea.setSizeIncrement(QtCore.QSize(20, 18))
@@ -207,6 +206,7 @@ class Ui_Dialog(QtGui.QWidget):
         font.setPointSize(14)
         self.labelArea.setFont(font)
         self.labelArea.setObjectName(_fromUtf8("labelArea"))
+        self.labelArea.setText(_translate("Dialog", "区域", None))
         self.comboBoxArea = QtGui.QComboBox(self)
         self.comboBoxArea.setGeometry(QtCore.QRect(430, 490, 181, 31))
         self.comboBoxArea.setSizeIncrement(QtCore.QSize(25, 21))
@@ -215,10 +215,13 @@ class Ui_Dialog(QtGui.QWidget):
         font.setPointSize(13)
         self.comboBoxArea.setFont(font)
         self.comboBoxArea.setObjectName(_fromUtf8("comboBoxArea"))
-        self.comboBoxArea.addItem(_fromUtf8(""))
-        self.comboBoxArea.addItem(_fromUtf8(""))
-        self.comboBoxArea.addItem(_fromUtf8(""))
-        self.comboBoxArea.addItem(_fromUtf8(""))
+        self.comboBoxArea.addItem(_fromUtf8("---请选择---"))
+        self.comboBoxArea.addItem(_fromUtf8("华东"))
+        self.comboBoxArea.addItem(_fromUtf8("华南"))
+        self.comboBoxArea.addItem(_fromUtf8("中部"))
+        self.comboBoxArea.addItem(_fromUtf8("东北"))
+
+        #详细地址
         self.labelCustomerAddress = QtGui.QLabel(self)
         self.labelCustomerAddress.setGeometry(QtCore.QRect(40, 560, 90, 21))
         self.labelCustomerAddress.setSizeIncrement(QtCore.QSize(25, 18))
@@ -342,11 +345,8 @@ class Ui_Dialog(QtGui.QWidget):
         self.labelCountry.setText(_translate("Dialog", "国家", None))
 
 
-        self.labelArea.setText(_translate("Dialog", "区域", None))
-        self.comboBoxArea.setItemText(0, _translate("Dialog", "---请选择---", None))
-        self.comboBoxArea.setItemText(1, _translate("Dialog", "1", None))
-        self.comboBoxArea.setItemText(2, _translate("Dialog", "2", None))
-        self.comboBoxArea.setItemText(3, _translate("Dialog", "3", None))
+
+
         self.labelCustomerAddress.setText(_translate("Dialog", "客户地址", None))
         self.comboBoxProvince.setItemText(0, _translate("Dialog", "请选择省份", None))
         self.comboBoxProvince.setItemText(1, _translate("Dialog", "小型", None))
