@@ -7,7 +7,8 @@ from  MainWindow import MyMainWindow
 
 _fromUtf8 = QtCore.QString.fromUtf8
 userlistfile = '../config/userlist.dat'
-#loginstylekey=['销售员',]
+loginstylelist=['销售员','销售主管','销售总监','管理员']
+
 try:
     _encoding = QtGui.QApplication.UnicodeUTF8
     def _translate(context, text, disambig):
@@ -58,10 +59,9 @@ class CWidgetLogin(QtGui.QWidget):
         font = QtGui.QFont()
         font.setPointSize(12)
         self.comBoxLoginStyle.setFont(font)
-        self.comBoxLoginStyle.addItem(_fromUtf8("销售员"))
-        self.comBoxLoginStyle.addItem(_fromUtf8("销售主管"))
-        self.comBoxLoginStyle.addItem(_fromUtf8("销售总监"))
-        self.comBoxLoginStyle.addItem(_fromUtf8("管理员"))
+        for loginstylevar in loginstylelist:
+            self.comBoxLoginStyle.addItem(_fromUtf8(loginstylevar))
+
         #text username
         self.lineTextUser = QtGui.QLineEdit(self)
         self.lineTextUser.setGeometry(QtCore.QRect(260, 210, 150, 24))
