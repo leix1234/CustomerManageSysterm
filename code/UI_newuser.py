@@ -30,11 +30,18 @@ class Ui_Dialog(QtGui.QWidget):
     def setupUi(self):
         self.setObjectName(_fromUtf8("Dialog"))
         self.resize(690, 1024)
+        self.setMinimumSize(690,1024)
         self.setSizeIncrement(QtCore.QSize(25, 21))
         self.setBaseSize(QtCore.QSize(25, 21))
         font = QtGui.QFont()
         font.setPointSize(14)
         self.setFont(font)
+
+        self.scroll = QtGui.QScrollArea()
+        self.scroll.setWidget(self)
+        self.scroll.setAutoFillBackground(True)
+        self.scroll.setWidgetResizable(True)
+
         #名称
         self.labelCustomerName = QtGui.QLabel(self)
         self.labelCustomerName.setGeometry(QtCore.QRect(42, 22, 90, 19))
